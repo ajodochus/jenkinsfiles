@@ -8,14 +8,14 @@ environment {
     stages {
         stage('start notepad on akoya){
             agent {
-                        label "akoya_medion"
-                    }
-                    steps {
-                        powershell(returnStdout: true, script:"""                            
-                            Start-Process \"C:\\windows\\system32\\notepad.exe\"
-                        """)
-                    }
-                }
+               label "akoya_medion"
+            }
+            steps {
+                    powershell(returnStdout: true, script:"""                            
+                        Start-Process \"C:\\windows\\system32\\notepad.exe\"
+                    """)
+            }
+                
         }
         stage('Run Tests') {
             parallel {
