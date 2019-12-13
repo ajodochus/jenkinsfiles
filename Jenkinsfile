@@ -46,7 +46,7 @@ environment {
                     steps {
                         powershell(returnStdout: true, script:"""
                             
-                            Start-Process \"C:\windows\system32\notepad.exe\"
+                            Start-Process \"C:\\windows\\system32\\notepad.exe\"
                             Start-Sleep 10
                             Stop-Process -name notepad
 
