@@ -11,9 +11,9 @@ environment {
                label "akoya_medion"
             }
             steps {
-                    powershell(returnStdout: true, script:"""                            
+                    powershell(returnStdout: true, script:'''                            
                         Start-Process -FilePath notepad
-                    """)
+                    ''')
             }
                 
         }
