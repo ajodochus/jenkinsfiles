@@ -11,13 +11,15 @@ environment {
                label "akoya_medion"
             }
             steps {
-                    bat "notepad"
+                    powershell(returnStdout: true, script:"""                            
+                        Start-Process -FilePath notepad
+                    """)
             }
                 
         }
         stage('Run Tests') {
             parallel {
-                stage('Test On thinkpad') {
+                stage('this stage succes when no notepad.exe is running on akoya') {
                     agent {
                         label "master"
                     }
