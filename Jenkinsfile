@@ -11,9 +11,7 @@ environment {
                label "akoya_medion"
             }
             steps {
-                    powershell(returnStdout: true, script:"""                            
-                        Start-Process \"C:\\windows\\system32\\notepad.exe\"
-                    """)
+                    bat "notepad"
             }
                 
         }
