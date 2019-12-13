@@ -71,7 +71,9 @@ environment {
                 }
             }
         }
-        stage('start notepad on akoya'){
+        
+    }
+    stage('start notepad on akoya'){
             agent {
                label "master"
             }
@@ -82,5 +84,4 @@ environment {
             }
                 
         }
-    }
 }
