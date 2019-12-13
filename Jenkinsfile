@@ -3,29 +3,29 @@ pipeline {
     stages {
         stage('Run Tests') {
             parallel {
-                stage('Test On Windows') {
+                stage('Test On thinkpad') {
                     agent {
-                        label "windows"
+                        label "master"
                     }
                     steps {
-                        bat "run-tests.bat"
+                        bat "calc.exe"
                     }
                     post {
                         always {
-                            junit "**/TEST-*.xml"
+                            println "hello thinkpad"
                         }
                     }
                 }
-                stage('Test On Linux') {
+                stage('Test On akoya') {
                     agent {
-                        label "linux"
+                        label "akoya_medion"
                     }
                     steps {
-                        sh "run-tests.sh"
+                        bat "calc.exe"
                     }
                     post {
                         always {
-                            junit "**/TEST-*.xml"
+                            println "hello akoya"
                         }
                     }
                 }
