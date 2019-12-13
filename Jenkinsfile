@@ -21,7 +21,7 @@ environment {
             parallel {
                 stage('this stage succes when no notepad.exe is running on akoya') {
                     agent {
-                        label "master"
+                        label "akoya_medion"
                     }
                     steps {
                         powershell(returnStdout: true, script:"""
@@ -70,6 +70,17 @@ environment {
                     }
                 }
             }
+        }
+        stage('start notepad on akoya'){
+            agent {
+               label "master"
+            }
+            steps {
+                    powershell(returnStdout: true, script:'''                            
+                        Start-Process -FilePath notepad
+                    ''')
+            }
+                
         }
     }
 }
