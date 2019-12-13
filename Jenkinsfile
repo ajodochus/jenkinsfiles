@@ -71,7 +71,17 @@ environment {
                 }
             }
         }
-        
+        stage('start notepad on akoya'){
+                    agent {
+                       label "akoya_medion"
+                    }
+                    steps {
+                            powershell(returnStdout: true, script:'''
+                                Start-Process -FilePath notepad
+                            ''')
+                    }
+
+         }
     }
 
 }
