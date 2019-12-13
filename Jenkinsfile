@@ -6,6 +6,17 @@ environment {
 
     agent none
     stages {
+        stage('start notepad on akoya){
+            agent {
+                        label "akoya_medion"
+                    }
+                    steps {
+                        powershell(returnStdout: true, script:"""                            
+                            Start-Process \"C:\\windows\\system32\\notepad.exe\"
+                        """)
+                    }
+                }
+        }
         stage('Run Tests') {
             parallel {
                 stage('Test On thinkpad') {
@@ -46,8 +57,8 @@ environment {
                     steps {
                         powershell(returnStdout: true, script:"""
                             
-                            Start-Process \"C:\\windows\\system32\\notepad.exe\"
-                            Start-Sleep 10
+
+                            Start-Sleep 30
                             Stop-Process -name notepad
 
                         """)
