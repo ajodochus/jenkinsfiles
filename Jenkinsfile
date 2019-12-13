@@ -6,7 +6,7 @@ environment {
 
     agent none
     stages {
-        stage('start notepad on akoya){
+        stage('start notepad on akoya'){
             agent {
                label "akoya_medion"
             }
