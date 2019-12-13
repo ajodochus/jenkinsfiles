@@ -1,11 +1,12 @@
 pipeline {
 
-
+environment {
+     timeout_for_notepad_watcher = 120
+   }
 
     agent none
     stages {
         stage('Run Tests') {
-        def timeout_for_notepad_watcher = 60
             parallel {
                 stage('Test On thinkpad') {
                     agent {
